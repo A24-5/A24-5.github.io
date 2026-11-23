@@ -61,7 +61,7 @@
       b.className = 'card' + (p.format === '16:9' ? ' wide' : '');
       b.style.animationDelay = (i * 40) + 'ms';
       b.innerHTML =
-        '<div class="thumb"><img loading="lazy" src="assets/posters/' + p.id + '.jpg" alt="">' +
+        '<div class="thumb"><img loading="lazy" src="' + p.id + '.jpg" alt="">' +
         '<div class="badges"><span>' + esc(p.format) + '</span><span>' + esc(p.duration) + '</span></div>' +
         '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>' +
         '<div class="card-body"><p class="client">' + esc(p.client) + '</p><h3>' + esc(p.title) + '</h3></div>';
@@ -80,8 +80,8 @@
     var p = byId[id]; if (!p) return;
     lastFocus = document.activeElement;
     box.classList.toggle('wide', p.format === '16:9');
-    pv.poster = 'assets/posters/' + p.id + '.jpg';
-    pv.src = 'assets/videos/' + p.id + '.mp4';
+    pv.poster = '' + p.id + '.jpg';
+    pv.src = '' + p.id + '.mp4';
     document.getElementById('pClient').textContent = p.client;
     document.getElementById('pTitle').textContent = p.title;
     document.getElementById('pDesc').textContent = p.desc;

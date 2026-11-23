@@ -1,5 +1,5 @@
 // Liste des réalisations du portfolio LEARNEO.
-// Pour ajouter une vidéo : déposez le fichier dans assets/videos/ et son image dans assets/posters/,
+// Pour ajouter une vidéo : déposez le fichier .mp4 et son image .jpg à la racine du dépôt,
 // puis ajoutez une entrée ci-dessous (même "id" que le nom des fichiers).
 window.CATEGORIES = [
   { id: "all",     label: "Tout" },
