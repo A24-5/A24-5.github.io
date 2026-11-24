@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Johnlex DOHOUNON | Santé publique et surveillance épidémiologique</title>
+<meta name="description" content="Portfolio de Johnlex DOHOUNON, licencié en santé publique, spécialité surveillance épidémiologique (ENATSE, Université de Parakou, Bénin).">
+<meta property="og:title" content="Johnlex DOHOUNON | Santé publique et surveillance épidémiologique">
+<meta property="og:description" content="Surveillance épidémiologique, analyse de données de santé et prévention des maladies non transmissibles au Bénin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fond:#FBFCFA;
+  --panneau:rgba(255,255,255,.78);
+  --encre:#14252B;
+  --encre-2:#4F6266;
+  --cobalt:#2742C9;
+  --cobalt-clair:#E4E9FF;
+  --turquoise:#14A39A;
+  --safran:#E0A21B;
+  --filet:#DCE3DE;
+  --sans:"Archivo",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --ombre:0 1px 2px rgba(20,37,43,.04),0 8px 28px -12px rgba(20,37,43,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--fond);color:var(--encre);font-family:var(--serif);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--cobalt);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:3px}
+[data-lang="fr"] .en,[data-lang="en"] .fr{display:none !important}
+
+/* ---------- fond vivant ---------- */
+.ambiance{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.ambiance::after{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(20,37,43,.10) 1px,transparent 1.2px);
+  background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
+.halo{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.h1{width:42rem;height:42rem;background:#C9D4FF;top:-14rem;right:-10rem;animation:derive1 26s ease-in-out infinite alternate}
+.h2{width:34rem;height:34rem;background:#BFEDE7;top:30%;left:-14rem;animation:derive2 32s ease-in-out infinite alternate}
+.h3{width:30rem;height:30rem;background:#FCE7B4;bottom:-12rem;right:15%;animation:derive3 29s ease-in-out infinite alternate}
+@keyframes derive1{to{transform:translate(-8rem,6rem) scale(1.1)}}
+@keyframes derive2{to{transform:translate(10rem,-5rem) scale(1.15)}}
+@keyframes derive3{to{transform:translate(-6rem,-8rem) scale(.95)}}
+
+/* ---------- barre haute ---------- */
+.barre{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .3s,box-shadow .3s}
+.barre.solide{background:rgba(251,252,250,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--filet)}
+.progression{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--cobalt),var(--turquoise),var(--safran));transform-origin:left;transform:scaleX(var(--p,0))}
+.barre-in{max-width:74rem;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;gap:1.5rem}
+.sigle{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-weight:800;font-variation-settings:"wdth" 75;font-size:1.05rem;color:var(--encre);text-decoration:none;margin-right:auto}
+.sigle i{width:.6rem;height:.6rem;border-radius:50%;background:var(--turquoise);box-shadow:0 0 0 0 rgba(20,163,154,.6);animation:pouls 2.4s infinite}
+@keyframes pouls{70%{box-shadow:0 0 0 .55rem rgba(20,163,154,0)}100%{box-shadow:0 0 0 0 rgba(20,163,154,0)}}
+.nav{display:flex;gap:.3rem;font-family:var(--sans);font-size:.92rem}
+.nav a{color:var(--encre-2);text-decoration:none;padding:.35rem .7rem;border-radius:999px;transition:background .2s,color .2s}
+.nav a:hover{color:var(--encre);background:rgba(39,66,201,.07)}
+.nav a.actif{color:var(--cobalt);background:var(--cobalt-clair)}
+.langue{font-family:var(--sans);font-size:.85rem;font-weight:700;border:0;background:var(--encre);color:#fff;border-radius:999px;padding:.4rem .9rem;cursor:pointer;transition:transform .2s,background .2s}
+.langue:hover{background:var(--cobalt);transform:translateY(-1px)}
+
+main{max-width:74rem;margin:0 auto;padding:0 1.5rem}
+
+/* ---------- en-tête ---------- */
+.tete{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2rem;padding:6.5rem 0 3rem}
+.statut-live{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--encre);background:var(--panneau);border:1px solid var(--filet);padding:.35rem .8rem .35rem .6rem;border-radius:999px;box-shadow:var(--ombre)}
+.statut-live i{width:.5rem;height:.5rem;border-radius:50%;background:var(--safran);animation:pouls-or 2s infinite}
+@keyframes pouls-or{0%{box-shadow:0 0 0 0 rgba(224,162,27,.7)}70%{box-shadow:0 0 0 .5rem rgba(224,162,27,0)}100%{box-shadow:0 0 0 0 rgba(224,162,27,0)}}
+.nom{margin-top:1.4rem;font-family:var(--sans);font-weight:800;line-height:.88;letter-spacing:-.01em;font-size:clamp(3.2rem,8.6vw,7.6rem)}
+.nom .prenom{display:block;font-variation-settings:"wdth" 125;font-weight:500}
+.nom .famille{display:block;font-variation-settings:"wdth" 62;background:linear-gradient(100deg,var(--encre) 0%,var(--encre) 40%,var(--cobalt) 70%,var(--turquoise) 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:reflet 9s ease-in-out infinite alternate}
+@keyframes reflet{to{background-position:100% 0}}
+.nom .l{display:inline-block;opacity:0;transform:translateY(.35em);animation:monte .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*45ms + 100ms)}
+@keyframes monte{to{opacity:1;transform:none}}
+.poste{margin-top:1.6rem;font-family:var(--sans);font-size:clamp(1.15rem,2vw,1.45rem);font-weight:600;line-height:1.35}
+.rotatif{display:inline-grid;vertical-align:bottom;color:var(--cobalt)}
+.rotatif>span{grid-area:1/1;opacity:0;transform:translateY(.6em);transition:opacity .45s,transform .45s}
+.rotatif>span.on{opacity:1;transform:none}
+.rotatif>span.off{opacity:0;transform:translateY(-.6em)}
+.accroche{margin-top:1rem;max-width:52ch;color:var(--encre-2)}
+.actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{font-family:var(--sans);font-weight:600;font-size:.98rem;text-decoration:none;padding:.8rem 1.3rem;border-radius:10px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-plein{background:var(--cobalt);color:#fff;box-shadow:0 10px 24px -10px rgba(39,66,201,.7)}
+.btn-plein:hover{box-shadow:0 14px 30px -10px rgba(39,66,201,.8)}
+.btn-vide{color:var(--encre);background:var(--panneau);border:1px solid var(--filet)}
+.btn-vide:hover{box-shadow:var(--ombre)}
+
+.chiffres{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:2rem}
+.chiffres div{font-family:var(--sans)}
+.chiffres b{display:block;font-size:2rem;font-weight:800;font-variation-settings:"wdth" 75;line-height:1;font-variant-numeric:tabular-nums}
+.chiffres span{font-size:.88rem;color:var(--encre-2)}
+
+/* carte de signaux */
+.carte{position:relative;aspect-ratio:1/1;width:100%;max-width:34rem;justify-self:end;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,255,255,.55));border:1px solid var(--filet);box-shadow:0 30px 60px -30px rgba(39,66,201,.35);overflow:hidden}
+.carte canvas{position:absolute;inset:0;width:100%;height:100%}
+.legende{position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem;font-family:var(--sans);font-size:.8rem;color:var(--encre-2);background:rgba(255,255,255,.88);backdrop-filter:blur(6px);border:1px solid var(--filet);border-radius:12px;padding:.55rem .8rem}
+.legende b{font-size:.95rem;color:var(--encre)}
+.legende .pts{display:flex;gap:.8rem}
+.legende .pts span{display:inline-flex;align-items:center;gap:.35rem}
+.legende .pts i{width:.55rem;height:.55rem;border-radius:50%}
+.defile{position:absolute;left:50%;bottom:1.5rem;transform:translateX(-50%);font-family:var(--sans);font-size:.8rem;color:var(--encre-2);display:flex;flex-direction:column;align-items:center;gap:.3rem;text-decoration:none}
+.defile i{width:1.3rem;height:2rem;border:1.5px solid var(--encre-2);border-radius:999px;position:relative}
+.defile i::after{content:"";position:absolute;left:50%;top:.35rem;width:3px;height:6px;margin-left:-1.5px;border-radius:2px;background:var(--encre-2);animation:molette 1.6s infinite}
+@keyframes molette{to{transform:translateY(.7rem);opacity:0}}
+
+/* ---------- sections ---------- */
+.sec{display:grid;grid-template-columns:13rem 1fr;gap:2.5rem;padding:5rem 0}
+.sec>h2{font-family:var(--sans);font-weight:700;font-variation-settings:"wdth" 80;font-size:1.4rem;line-height:1.2;position:sticky;top:5.5rem;align-self:start;display:flex;align-items:center;gap:.6rem}
+.sec>h2::before{content:"";width:.7rem;height:.7rem;border-radius:3px;background:var(--c,var(--cobalt));transform:rotate(45deg);flex:none}
+.corps{max-width:46rem}
+h3{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.3}
+.discret{color:var(--encre-2)}
+.panneau{background:var(--panneau);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--filet);border-radius:18px;box-shadow:var(--ombre)}
+
+/* apparition au défilement */
+.js .rev{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rev.vu{opacity:1;transform:none}
+
+/* mémoire */
+.titre-memoire{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.35;max-width:36ch}
+.meta-memoire{margin-top:.9rem;font-family:var(--sans);font-size:.92rem;color:var(--encre-2)}
+.cascade{margin-top:2.25rem;padding:1.75rem}
+.cascade figcaption{font-family:var(--sans);font-size:1rem;font-weight:700;margin-bottom:1.25rem}
+.ligne{display:grid;grid-template-columns:12rem 1fr 4.4rem;align-items:center;gap:1rem;padding:.6rem .5rem;border-radius:10px;transition:background .2s}
+.ligne:hover{background:rgba(39,66,201,.05)}
+.etiq{font-family:var(--sans);font-size:.95rem;line-height:1.25}
+.piste{height:1.5rem;background:#EEF1F6;border-radius:999px;overflow:hidden}
+.barre-val{height:100%;width:var(--v);background:linear-gradient(90deg,#4B63E0,var(--cobalt));border-radius:999px;transform-origin:left;position:relative;overflow:hidden}
+.barre-val::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-100%);animation:brille 3.2s 1.6s infinite}
+@keyframes brille{60%,100%{transform:translateX(100%)}}
+.ligne.cle .barre-val{background:linear-gradient(90deg,#F4C04E,var(--safran))}
+.val{font-family:var(--sans);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;text-align:right}
+.ligne.cle .val{color:#A06E00}
+.source{margin-top:1rem;font-family:var(--sans);font-size:.82rem;color:var(--encre-2)}
+.anime .barre-val{transform:scaleX(0)}
+.anime.vu .barre-val{transform:scaleX(1);transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.anime.vu .ligne:nth-of-type(2) .barre-val{transition-delay:.18s}
+.anime.vu .ligne:nth-of-type(3) .barre-val{transition-delay:.36s}
+.anime.vu .ligne:nth-of-type(4) .barre-val{transition-delay:.54s}
+
+.constat{margin-top:1.5rem;padding:1.5rem 1.6rem;border-left:5px solid var(--safran);background:linear-gradient(90deg,rgba(252,231,180,.55),rgba(255,255,255,.6));border-radius:0 18px 18px 0}
+.constat p{font-family:var(--sans);font-weight:700;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.35}
+.constat .detail{margin-top:.6rem;font-family:var(--serif);font-weight:400;font-size:1rem;color:var(--encre-2)}
+.methode{margin-top:1.5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.methode>div{padding:1.1rem 1.2rem;transition:transform .25s,box-shadow .25s}
+.methode>div:hover{transform:translateY(-3px);box-shadow:0 16px 34px -16px rgba(39,66,201,.35)}
+.methode dt{font-family:var(--sans);font-weight:700;font-size:.95rem;color:var(--cobalt)}
+.methode dd{font-size:1rem;color:var(--encre-2);margin-top:.25rem}
+
+/* terrain */
+.frise{list-style:none;position:relative}
+.frise::before,.frise .remplie{content:"";position:absolute;left:.55rem;top:.6rem;bottom:.6rem;width:2px;background:var(--filet)}
+.frise .remplie{background:linear-gradient(var(--safran),var(--cobalt));transform-origin:top;transform:scaleY(var(--f,0))}
+.etape{position:relative;padding-left:2.6rem}
+.etape+.etape{margin-top:1.5rem}
+.etape::before{content:"";position:absolute;left:0;top:1.6rem;width:1.25rem;height:1.25rem;border-radius:50%;background:#fff;border:3px solid var(--cobalt);z-index:1}
+.etape.actuel::before{border-color:var(--safran);background:var(--safran);animation:pouls-or 2s infinite}
+.carte-etape{padding:1.3rem 1.4rem;transition:transform .25s,box-shadow .25s}
+.carte-etape:hover{transform:translateX(4px);box-shadow:0 16px 34px -18px rgba(20,37,43,.35)}
+.date{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--encre-2);font-variant-numeric:tabular-nums}
+.badge{display:inline-block;margin-left:.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;background:var(--safran);color:var(--encre);padding:.12rem .55rem;border-radius:999px;vertical-align:.1em}
+.lieu{font-size:1rem;color:var(--encre-2);margin-top:.2rem}
+.etape ul{margin-top:.8rem;padding-left:1.1rem}
+.etape li{font-size:1rem}
+.etape li::marker{color:var(--turquoise)}
+.etape li+li{margin-top:.3rem}
+
+/* outils */
+.groupes{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.groupe{padding:1.3rem 1.4rem}
+.groupe h3{font-size:1rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.groupe h3 i{width:.55rem;height:.55rem;border-radius:50%;background:var(--g,var(--cobalt))}
+.puces{display:flex;flex-wrap:wrap;gap:.45rem}
+.puces>span{font-family:var(--sans);font-size:.9rem;background:#fff;border:1px solid var(--filet);padding:.3rem .75rem;border-radius:999px;transition:transform .2s,background .2s,color .2s,border-color .2s;cursor:default}
+.puces>span:hover{transform:translateY(-2px);background:var(--encre);color:#fff;border-color:var(--encre)}
+
+/* formation */
+.diplome{padding:1.5rem 1.6rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.diplome::after{content:"";position:absolute;right:-3rem;top:-3rem;width:9rem;height:9rem;border-radius:50%;background:radial-gradient(var(--cobalt-clair),transparent 70%)}
+.diplome .lieu{margin-top:.35rem}
+.certifs{list-style:none;padding:.5rem 1.4rem}
+.certifs li{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.9rem 0;border-top:1px solid var(--filet);transition:padding-left .25s}
+.certifs li:first-child{border-top:0}
+.certifs li:hover{padding-left:.4rem}
+.certifs .date{padding-top:.15rem;color:var(--cobalt)}
+.certifs strong{font-family:var(--sans);font-weight:600;font-size:1rem;display:block;line-height:1.35}
+.certifs span.discret{font-size:.95rem}
+.sous-titre{margin:0 0 .75rem}
+
+/* projets */
+.projets{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.projet{padding:1.4rem;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.projet:hover{transform:translateY(-4px);box-shadow:0 20px 40px -18px rgba(39,66,201,.4)}
+.projet .code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;background:var(--encre);color:#BFEDE7;padding:.6rem .8rem;border-radius:10px;margin-bottom:1rem;white-space:nowrap;overflow:hidden}
+.projet .code span{color:#F4C04E}
+.projet p{margin-top:.45rem;font-size:1rem}
+.statut{display:inline-block;margin-top:.5rem;font-family:var(--sans);font-size:.78rem;font-weight:700;color:var(--turquoise);background:#DDF4F1;padding:.15rem .6rem;border-radius:999px;align-self:flex-start}
+
+/* engagement */
+.engage{list-style:none;display:grid;gap:1rem}
+.engage li{padding:1.2rem 1.4rem;display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:start}
+.engage .ico{width:2.6rem;height:2.6rem;border-radius:12px;display:grid;place-items:center;background:var(--cobalt-clair);color:var(--cobalt)}
+.engage li:nth-child(2) .ico{background:#DDF4F1;color:var(--turquoise)}
+.engage li:nth-child(3) .ico{background:#FCEFCB;color:#A06E00}
+.engage svg{width:1.3rem;height:1.3rem}
+.engage p{font-size:1rem;margin-top:.25rem}
+
+/* contact */
+.contact{margin:3rem 0 2rem;padding:3.5rem 3rem;border-radius:28px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(130deg,#2742C9 0%,#1E3AA8 45%,#14A39A 100%);background-size:180% 180%;animation:vague 14s ease-in-out infinite alternate}
+@keyframes vague{to{background-position:100% 100%}}
+.contact::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
+.contact>*{position:relative}
+.contact h2{font-family:var(--sans);font-weight:800;font-variation-settings:"wdth" 70;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1}
+.contact .accroche{margin-top:1rem;color:rgba(255,255,255,.85)}
+.coord{margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.75rem;font-family:var(--sans)}
+.coord>div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:.9rem 1rem;transition:background .2s,transform .2s}
+.coord>div:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+@media (min-width:901px){.coord{grid-template-columns:1.7fr 1.1fr 1fr 1fr}}
+.coord dt{font-size:.82rem;color:rgba(255,255,255,.75)}
+.coord dd{font-size:1rem;font-weight:600;margin-top:.15rem;word-break:break-word}
+.coord a{color:#fff;text-decoration:none}
+.pied{padding:1rem 0 2.5rem;font-family:var(--sans);font-size:.82rem;color:var(--encre-2);text-align:center}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .tete{grid-template-columns:1fr;min-height:0;padding:6rem 0 2rem}
+  .carte{justify-self:center;max-width:26rem}
+  .defile{display:none}
+  .sec{grid-template-columns:1fr;gap:1.25rem;padding:3.25rem 0}
+  .sec>h2{position:static}
+  .ligne{grid-template-columns:1fr 3.8rem;gap:.35rem .75rem}
+  .ligne .etiq{grid-column:1/-1}
+  .methode,.groupes,.projets{grid-template-columns:1fr}
+  .cascade{padding:1.2rem}
+  .certifs li{grid-template-columns:1fr;gap:.1rem}
+  .contact{padding:2.5rem 1.5rem;border-radius:22px}
+  .chiffres{gap:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .nom .l{opacity:1;transform:none}
+  .js .rev{opacity:1;transform:none}
+  .anime .barre-val{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ambiance" aria-hidden="true"><div class="halo h1"></div><div class="halo h2"></div><div class="halo h3"></div></div>
+
+<header class="barre" id="barre">
+  <div class="barre-in">
+    <a class="sigle" href="#haut"><i></i>J. DOHOUNON</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#recherche"><span class="fr">Recherche</span><span class="en">Research</span></a>
+      <a href="#terrain"><span class="fr">Terrain</span><span class="en">Fieldwork</span></a>
+      <a href="#outils"><span class="fr">Outils</span><span class="en">Skills</span></a>
+      <a href="#formation"><span class="fr">Formation</span><span class="en">Education</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="langue" id="langue" type="button" aria-label="Switch to English">EN</button>
+  </div>
+  <div class="progression" id="progression"></div>
+</header>
+
+<main id="haut">
+
+  <section class="tete">
+    <div>
+      <span class="statut-live"><i></i><span class="fr">En stage d'épidémiologie, Ouémé</span><span class="en">Epidemiology intern, Ouémé</span></span>
+      <h1 class="nom" aria-label="Johnlex DOHOUNON"><span class="prenom" data-lettres>Johnlex</span><span class="famille">DOHOUNON</span></h1>
+      <p class="poste">
+        <span class="fr">Santé publique, spécialiste en </span><span class="en">Public health, specialised in </span><br>
+        <span class="rotatif fr" data-rot><span class="on">surveillance épidémiologique</span><span>analyse de données de santé</span><span>prévention des maladies chroniques</span></span>
+        <span class="rotatif en" data-rot><span class="on">epidemiological surveillance</span><span>health data analysis</span><span>chronic disease prevention</span></span>
+      </p>
+      <p class="accroche">
+        <span class="fr">Je collecte, analyse et cartographie les données de santé pour repérer les problèmes tôt et orienter l'action. Mon objectif : concevoir et évaluer des interventions de promotion de la santé et de prévention des maladies non transmissibles au Bénin.</span>
+        <span class="en">I collect, analyse and map health data to detect problems early and guide action. My goal: to design and evaluate health promotion and non-communicable disease prevention interventions in Benin.</span>
+      </p>
+      <div class="actions">
+        <a class="btn btn-plein" href="mailto:johnlexdohounon24@gmail.com"><span class="fr">M'écrire</span><span class="en">Email me</span></a>
+        <a class="btn btn-vide" href="#recherche"><span class="fr">Lire mon mémoire</span><span class="en">See my thesis</span></a>
+      </div>
+      <div class="chiffres">
+        <div><b data-compte="380">380</b><span class="fr">étudiants enquêtés</span><span class="en">students surveyed</span></div>
+        <div><b data-compte="3">3</b><span class="fr">stages en épidémiologie</span><span class="en">epidemiology placements</span></div>
+        <div><b data-compte="5">5</b><span class="fr">certifications en ligne</span><span class="en">online certifications</span></div>
+      </div>
+    </div>
+
+    <div class="carte" aria-hidden="true">
+      <canvas id="signaux"></canvas>
+      <div class="legende">
+        <div><b id="nb-signaux">0</b> <span class="fr">signaux détectés</span><span class="en">signals detected</span></div>
+        <div class="pts">
+          <span><i style="background:#2742C9"></i><span class="fr">Cas</span><span class="en">Case</span></span>
+          <span><i style="background:#E0A21B"></i><span class="fr">Alerte</span><span class="en">Alert</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECHERCHE -->
+  <section class="sec" id="recherche" style="--c:var(--cobalt)">
+    <h2><span class="fr">Recherche</span><span class="en">Research</span></h2>
+    <div class="corps">
+      <p class="titre-memoire rev">
+        <span class="fr">Connaissances, attitudes et pratiques des étudiants de l'Université de Parakou en matière de prévention des maladies cardiovasculaires en 2025</span>
+        <span class="en">Knowledge, attitudes and practices of University of Parakou students regarding cardiovascular disease prevention, 2025</span>
+      </p>
+      <p class="meta-memoire rev">
+        <span class="fr">Mémoire de licence, dirigé par Dr Luc BEHANZIN, maître de conférences agrégé de santé publique. 130 pages, résumé exécutif en anglais.</span>
+        <span class="en">Bachelor's thesis supervised by Dr Luc BEHANZIN, Associate Professor of Public Health. 130 pages, with an English executive summary.</span>
+      </p>
+
+      <figure class="cascade panneau rev" id="cascade">
+        <figcaption>
+          <span class="fr">De l'information à l'action : la cascade CAP chez 380 étudiants</span>
+          <span class="en">From awareness to action: the KAP cascade among 380 students</span>
+        </figcaption>
+        <div class="ligne">
+          <span class="etiq"><span class="fr">Ont entendu parler des maladies cardiovasculaires</span><span class="en">Have heard of cardiovascular diseases</span></span>
+          <div class="piste"><div class="barre-val" style="--v:89%"></div></div>
+          <span class="val" data-pct="89">89 %</span>
+        </div>
+        <div class="ligne">
+          <span class="etiq"><span class="fr">Ont de bonnes connaissances</span><span class="en">Have good knowledge</span></span>
+          <div class="piste"><div class="barre-val" style="--v:16.5%"></div></div>
+          <span class="val" data-pct="16.5">16,5 %</span>
+        </div>
+        <div class="ligne">
+          <span class="etiq"><span class="fr">Ont une attitude favorable</span><span class="en">Have a favourable attitude</span></span>
+          <div class="piste"><div class="barre-val" style="--v:55.6%"></div></div>
+          <span class="val" data-pct="55.6">55,6 %</span>
+        </div>
+        <div class="ligne cle">
+          <span class="etiq"><span class="fr">Ont de bonnes pratiques de prévention</span><span class="en">Have good prevention practices</span></span>
+          <div class="piste"><div class="barre-val" style="--v:10%"></div></div>
+          <span class="val" data-pct="10">10 %</span>
+        </div>
+        <p class="source">
+          <span class="fr">Étude transversale analytique, collecte du 12 au 31 mai 2025. 404 questionnaires, 380 validés (participation 95,5&nbsp;%).</span>
+          <span class="en">Analytical cross-sectional study, data collected 12–31 May 2025. 404 questionnaires, 380 valid (95.5% participation).</span>
+        </p>
+      </figure>
+
+      <div class="constat rev">
+        <p>
+          <span class="fr">Ce ne sont pas les connaissances qui font les bonnes pratiques, c'est l'attitude.</span>
+          <span class="en">Good practices were driven by attitude, not by knowledge.</span>
+        </p>
+        <p class="detail">
+          <span class="fr">Une attitude favorable (ORa 2,92 ; IC 95&nbsp;% 1,27–6,69) et l'âge de 20 à 22 ans (ORa 2,32) étaient associés aux bonnes pratiques ; le niveau de connaissances ne l'était pas. Par ailleurs, 85&nbsp;% des étudiants consomment des aliments ultra-transformés et seulement 7,6&nbsp;% atteignent cinq fruits et légumes par jour. Les campagnes de prévention gagneraient donc à travailler les attitudes et l'environnement alimentaire, pas seulement l'information.</span>
+          <span class="en">A favourable attitude (aOR 2.92; 95% CI 1.27–6.69) and being aged 20–22 (aOR 2.32) were associated with good practices; knowledge level was not. In addition, 85% of students eat ultra-processed foods and only 7.6% reach five servings of fruit and vegetables a day. Prevention campaigns should therefore work on attitudes and the food environment, not information alone.</span>
+        </p>
+      </div>
+
+      <dl class="methode">
+        <div class="panneau rev">
+          <dt><span class="fr">Échantillonnage</span><span class="en">Sampling</span></dt>
+          <dd><span class="fr">Aléatoire à trois degrés : 6 entités sur 9, deux années d'étude par entité.</span><span class="en">Three-stage random sampling: 6 of 9 faculties, two study years per faculty.</span></dd>
+        </div>
+        <div class="panneau rev" style="--d:.08s">
+          <dt><span class="fr">Collecte</span><span class="en">Data collection</span></dt>
+          <dd><span class="fr">Entretiens en face à face, saisie sur KoBoToolbox.</span><span class="en">Face-to-face interviews, captured in KoBoToolbox.</span></dd>
+        </div>
+        <div class="panneau rev">
+          <dt><span class="fr">Analyse</span><span class="en">Analysis</span></dt>
+          <dd><span class="fr">SPSS 21, Jamovi et RStudio : chi², test exact de Fisher, rapports de prévalence.</span><span class="en">SPSS 21, Jamovi and RStudio: chi-square, Fisher's exact test, prevalence ratios.</span></dd>
+        </div>
+        <div class="panneau rev" style="--d:.08s">
+          <dt><span class="fr">Modélisation</span><span class="en">Modelling</span></dt>
+          <dd><span class="fr">Régression logistique binaire, sélection pas à pas descendante.</span><span class="en">Binary logistic regression with backward stepwise selection.</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- TERRAIN -->
+  <section class="sec" id="terrain" style="--c:var(--safran)">
+    <h2><span class="fr">Expérience de terrain</span><span class="en">Field experience</span></h2>
+    <div class="corps">
+      <ol class="frise" id="frise">
+        <span class="remplie" aria-hidden="true"></span>
+        <li class="etape actuel rev">
+          <div class="carte-etape panneau">
+            <p class="date"><span class="fr">Nov. 2026 – fév. 2027</span><span class="en">Nov 2026 – Feb 2027</span><span class="badge"><span class="fr">En cours</span><span class="en">Current</span></span></p>
+            <h3><span class="fr">Stagiaire professionnel, service d'épidémiologie</span><span class="en">Professional intern, Epidemiology Unit</span></h3>
+            <p class="lieu"><span class="fr">Bureau de Zone Sanitaire Porto-Novo–Aguégués–Sèmè-Podji, Direction départementale de la santé de l'Ouémé</span><span class="en">Porto-Novo–Aguégués–Sèmè-Podji Health Zone Office, Ouémé Departmental Health Directorate</span></p>
+          </div>
+        </li>
+        <li class="etape rev">
+          <div class="carte-etape panneau">
+            <p class="date"><span class="fr">Nov. 2025 – janv. 2026</span><span class="en">Nov 2025 – Jan 2026</span></p>
+            <h3><span class="fr">Stagiaire professionnel, service d'épidémiologie</span><span class="en">Professional intern, Epidemiology Unit</span></h3>
+            <p class="lieu"><span class="fr">Bureau de Zone Sanitaire Abomey-Calavi/Sô-Ava</span><span class="en">Abomey-Calavi/Sô-Ava Health Zone Office</span></p>
+            <ul>
+              <li><span class="fr">Surveillance intégrée des maladies et riposte (SIMR) et investigations de cas de rage humaine et de mpox.</span><span class="en">Integrated Disease Surveillance and Response (IDSR) and case investigations for human rabies and mpox.</span></li>
+              <li><span class="fr">Enquêtes communautaires et analyse des indicateurs SIMR et DHIS2.</span><span class="en">Community surveys and analysis of IDSR and DHIS2 indicators.</span></li>
+              <li><span class="fr">Analyse des données de référence et contre-référence des femmes enceintes.</span><span class="en">Analysis of referral and counter-referral data for pregnant women.</span></li>
+              <li><span class="fr">Étude de la couverture sanitaire à Sô-Ava, Houédo-Aguékon, Calavi et Akassato, et production de cartes épidémiologiques.</span><span class="en">Health coverage analysis in Sô-Ava, Houédo-Aguékon, Calavi and Akassato, and production of epidemiological maps.</span></li>
+            </ul>
+          </div>
+        </li>
+        <li class="etape rev">
+          <div class="carte-etape panneau">
+            <p class="date"><span class="fr">Mars – mai 2024</span><span class="en">Mar – May 2024</span></p>
+            <h3><span class="fr">Stagiaire</span><span class="en">Intern</span></h3>
+            <p class="lieu"><span class="fr">Clinique Santé Vie Pour Tous, Parakou</span><span class="en">Santé Vie Pour Tous Clinic, Parakou</span></p>
+            <ul>
+              <li><span class="fr">Analyse de données, rédaction de rapports et surveillance.</span><span class="en">Data analysis, report writing and surveillance.</span></li>
+              <li><span class="fr">Diagnostic communautaire.</span><span class="en">Community health diagnosis.</span></li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- OUTILS -->
+  <section class="sec" id="outils" style="--c:var(--turquoise)">
+    <h2><span class="fr">Méthodes et outils</span><span class="en">Methods and tools</span></h2>
+    <div class="corps">
+      <div class="groupes">
+        <div class="groupe panneau rev">
+          <h3><i></i><span class="fr">Analyse statistique</span><span class="en">Statistical analysis</span></h3>
+          <div class="puces"><span>R / RStudio</span><span>Stata</span><span>SPSS</span><span>Jamovi</span></div>
+        </div>
+        <div class="groupe panneau rev" style="--g:var(--turquoise);--d:.08s">
+          <h3><i></i><span class="fr">Surveillance et collecte</span><span class="en">Surveillance and data collection</span></h3>
+          <div class="puces"><span>DHIS2</span><span><span class="fr">Base SIMR</span><span class="en">IDSR database</span></span><span>KoBoToolbox</span></div>
+        </div>
+        <div class="groupe panneau rev" style="--g:var(--safran)">
+          <h3><i></i><span class="fr">Méthodes</span><span class="en">Methods</span></h3>
+          <div class="puces">
+            <span><span class="fr">Études transversales</span><span class="en">Cross-sectional studies</span></span>
+            <span><span class="fr">Échantillonnage à plusieurs degrés</span><span class="en">Multi-stage sampling</span></span>
+            <span><span class="fr">Régression logistique</span><span class="en">Logistic regression</span></span>
+            <span><span class="fr">Investigation de cas</span><span class="en">Case investigation</span></span>
+            <span><span class="fr">Cartographie épidémiologique</span><span class="en">Epidemiological mapping</span></span>
+            <span><span class="fr">Diagnostic communautaire</span><span class="en">Community diagnosis</span></span>
+          </div>
+        </div>
+        <div class="groupe panneau rev" style="--g:var(--encre);--d:.08s">
+          <h3><i></i><span class="fr">Bureautique et langues</span><span class="en">Office and languages</span></h3>
+          <div class="puces">
+            <span>Word</span><span>Excel</span>
+            <span><span class="fr">Français, langue maternelle</span><span class="en">French, native</span></span>
+            <span><span class="fr">Anglais B2 (TOEFL iBT 2026)</span><span class="en">English B2 (TOEFL iBT 2026)</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section class="sec" id="formation" style="--c:var(--cobalt)">
+    <h2><span class="fr">Formation</span><span class="en">Education</span></h2>
+    <div class="corps">
+      <div class="diplome panneau rev">
+        <p class="date">2022 – 2025</p>
+        <h3><span class="fr">Licence professionnelle en santé publique, spécialité surveillance épidémiologique</span><span class="en">Professional Bachelor's in Public Health, Epidemiological Surveillance</span></h3>
+        <p class="lieu"><span class="fr">École nationale des techniciens supérieurs en santé publique et surveillance épidémiologique (ENATSE), Université de Parakou. 180 ECTS, mention Bien en 3<sup>e</sup> année.</span><span class="en">National School of Senior Technicians in Public Health and Epidemiological Surveillance (ENATSE), University of Parakou. 180 ECTS, final year graded "Bien" (good).</span></p>
+      </div>
+
+      <h3 class="sous-titre rev"><span class="fr">Certificats</span><span class="en">Certificates</span></h3>
+      <ul class="certifs panneau rev">
+        <li>
+          <span class="date">2026</span>
+          <div><strong><span class="fr">Cours virtuel en promotion de la santé (12 h)</span><span class="en">Virtual course on health promotion (12 h)</span></strong><span class="discret"><span class="fr">OPS/OMS, note finale 95&nbsp;%</span><span class="en">PAHO/WHO, final grade 95%</span></span></div>
+        </li>
+        <li>
+          <span class="date"><span class="fr">Déc. 2025</span><span class="en">Dec 2025</span></span>
+          <div><strong><span class="fr">Cours MLM pour les gestionnaires du PEV</span><span class="en">MLM course for EPI managers</span></strong><span class="discret"><span class="fr">OMS Afrique, certificat de niveau Master</span><span class="en">WHO Africa, Master-level certificate</span></span></div>
+        </li>
+        <li>
+          <span class="date"><span class="fr">Août 2025</span><span class="en">Aug 2025</span></span>
+          <div><strong>Field Epidemiology in Action</strong></div>
+        </li>
+        <li>
+          <span class="date"><span class="fr">Août 2025</span><span class="en">Aug 2025</span></span>
+          <div><strong><span class="fr">Série de certificats DisasterReady</span><span class="en">DisasterReady certificate series</span></strong><span class="discret"><span class="fr">Gestion de projet, suivi-évaluation, MEAL en situation d'urgence, analyse qualitative, protection des enfants</span><span class="en">Project management, monitoring and evaluation, MEAL in emergencies, qualitative analysis, child protection</span></span></div>
+        </li>
+        <li>
+          <span class="date"><span class="fr">Avril 2024</span><span class="en">Apr 2024</span></span>
+          <div><strong>Introduction to Statistics with R</strong><span class="discret">Université Paris-Saclay</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="sec" id="projets" style="--c:var(--turquoise)">
+    <h2><span class="fr">Projets d'analyse</span><span class="en">Analysis projects</span></h2>
+    <div class="corps">
+      <div class="projets">
+        <div class="projet panneau rev">
+          <div class="code" aria-hidden="true">&gt; analyse(<span>"ma_base.xlsx"</span>)</div>
+          <h3><a href="https://github.com/A24-5/r-adaptive-data-analysis">r-adaptive-data-analysis</a></h3>
+          <p><span class="fr">Script R adaptatif : on importe une base de données et l'analyse s'ajuste automatiquement aux variables qu'elle contient.</span><span class="en">An adaptive R script: import a dataset and the analysis adjusts automatically to the variables it contains.</span></p>
+        </div>
+        <div class="projet panneau rev" style="--d:.1s">
+          <div class="code" aria-hidden="true">&gt; exporter_word(<span>resultats</span>)</div>
+          <h3><span class="fr">Package R d'analyse en un clic</span><span class="en">One-click R analysis package</span></h3>
+          <span class="statut"><span class="fr">En développement</span><span class="en">In development</span></span>
+          <p><span class="fr">Une interface dans R pour importer une base, la prévisualiser et lancer une analyse descriptive, bivariée ou multivariée. Les résultats s'exportent en Word avec le code R correspondant, pour que chacun puisse reprendre l'analyse.</span><span class="en">An interface inside R to import a dataset, preview it and run descriptive, bivariate or multivariate analyses. Results export to Word with the matching R code, so anyone can rerun the analysis.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT -->
+  <section class="sec" id="engagement" style="--c:var(--safran)">
+    <h2><span class="fr">Engagement</span><span class="en">Leadership</span></h2>
+    <div class="corps">
+      <ul class="engage">
+        <li class="panneau rev">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <div>
+            <h3><span class="fr">Invité par Africa CDC à la CPHIA 2026</span><span class="en">Invited by Africa CDC to CPHIA 2026</span></h3>
+            <p><span class="fr">Invitation officielle à la 5<sup>e</sup> Conférence internationale sur la santé publique en Afrique, Addis-Abeba, 23–27 novembre 2026.</span><span class="en">Official invitation to the 5th International Conference on Public Health in Africa, Addis Ababa, 23–27 November 2026.</span></p>
+          </div>
+        </li>
+        <li class="panneau rev">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.2A5 5 0 0 1 21.5 19"/></svg></span>
+          <div>
+            <h3><span class="fr">Délégué de classe, 2022 – 2025</span><span class="en">Class representative, 2022 – 2025</span></h3>
+            <p><span class="fr">Représentant d'une promotion de plus de 70 étudiants pendant les trois années de licence.</span><span class="en">Represented a cohort of more than 70 students throughout the three-year programme.</span></p>
+          </div>
+        </li>
+        <li class="panneau rev">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 14l2.5 2.5L16 12"/></svg></span>
+          <div>
+            <h3><span class="fr">Organisateur des soutenances, 2025</span><span class="en">Thesis defence organiser, 2025</span></h3>
+            <p><span class="fr">Organisateur principal des soutenances de mémoire de sa promotion.</span><span class="en">Lead organiser of the thesis defences for his cohort.</span></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact rev" id="contact">
+    <h2><span class="fr">Travaillons ensemble</span><span class="en">Let's work together</span></h2>
+    <p class="accroche"><span class="fr">Ouvert aux postes, stages, assistanats de recherche et collaborations en épidémiologie et en santé publique.</span><span class="en">Open to roles, internships, research assistantships and collaborations in epidemiology and public health.</span></p>
+    <dl class="coord">
+      <div><dt>E-mail</dt><dd><a href="mailto:johnlexdohounon24@gmail.com">johnlexdohounon24@gmail.com</a></dd></div>
+      <div><dt><span class="fr">Téléphone</span><span class="en">Phone</span></dt><dd><a href="tel:+2290157138864">+229 01 57 13 88 64</a></dd></div>
+      <div><dt><span class="fr">Localisation</span><span class="en">Location</span></dt><dd><span class="fr">Sèmè-Podji, Bénin</span><span class="en">Sèmè-Podji, Benin</span></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/A24-5">github.com/A24-5</a></dd></div>
+    </dl>
+  </section>
+  <p class="pied">© 2026 Johnlex DOHOUNON</p>
+
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var calme=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* langue */
+  var btn=document.getElementById('langue');
+  function langue(){return root.getAttribute('data-lang')}
+  function set(l){
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    btn.textContent = l==='fr' ? 'EN' : 'FR';
+    btn.setAttribute('aria-label', l==='fr' ? 'Switch to English' : 'Passer en français');
+    document.title = l==='fr'
+      ? 'Johnlex DOHOUNON | Santé publique et surveillance épidémiologique'
+      : 'Johnlex DOHOUNON | Public health and epidemiological surveillance';
+    try{localStorage.setItem('lang',l)}catch(e){}
+    document.querySelectorAll('[data-pct]').forEach(function(el){ if(el.dataset.fini) el.textContent=fmt(+el.dataset.pct); });
+  }
+  var p=new URLSearchParams(location.search).get('lang'), s=null;
+  try{s=localStorage.getItem('lang')}catch(e){}
+  set(p==='en'||p==='fr' ? p : (s||'fr'));
+  btn.addEventListener('click',function(){set(langue()==='fr'?'en':'fr')});
+
+  /* lettres du prénom */
+  var pr=document.querySelector('[data-lettres]');
+  if(pr && !calme){
+    var t=pr.textContent; pr.textContent='';
+    t.split('').forEach(function(c,i){var s=document.createElement('span');s.className='l';s.style.setProperty('--i',i);s.textContent=c;pr.appendChild(s)});
+  }
+
+  /* mots qui tournent */
+  if(!calme) document.querySelectorAll('[data-rot]').forEach(function(box){
+    var items=[].slice.call(box.children), k=0;
+    setInterval(function(){
+      items[k].classList.remove('on'); items[k].classList.add('off');
+      var prev=items[k]; setTimeout(function(){prev.classList.remove('off')},500);
+      k=(k+1)%items.length; items[k].classList.add('on');
+    },2800);
+  });
+
+  /* compteurs */
+  function fmt(v){var d=(v%1)?1:0;var s=v.toFixed(d);return langue()==='fr'? s.replace('.',',')+' %' : s+'%'}
+  function compte(el,fin,isPct){
+    if(calme){el.textContent=isPct?fmt(fin):fin;el.dataset.fini=1;return}
+    var t0=null,dur=1400;
+    function pas(t){ if(!t0)t0=t; var x=Math.min((t-t0)/dur,1), e=1-Math.pow(1-x,3), v=fin*e;
+      el.textContent = isPct ? fmt(x<1?Math.round(v*10)/10:fin) : Math.round(v);
+      if(x<1) requestAnimationFrame(pas); else el.dataset.fini=1; }
+    requestAnimationFrame(pas);
+  }
+  document.querySelectorAll('[data-compte]').forEach(function(el){el.textContent='0';setTimeout(function(){compte(el,+el.dataset.compte,false)},700)});
+
+  /* apparitions */
+  var cascade=document.getElementById('cascade');
+  cascade.classList.add('anime');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('vu'); io.unobserve(e.target);
+      if(e.target===cascade){ cascade.querySelectorAll('[data-pct]').forEach(function(el,i){ el.textContent=fmt(0); setTimeout(function(){compte(el,+el.dataset.pct,true)},i*180) }); }
+    })},{threshold:.18,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  } else document.querySelectorAll('.rev').forEach(function(el){el.classList.add('vu')});
+
+  /* barre, progression, frise, nav active */
+  var barre=document.getElementById('barre'), prog=document.getElementById('progression'),
+      frise=document.getElementById('frise'), liens=[].slice.call(document.querySelectorAll('.nav a')),
+      secs=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function defil(){
+    var y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
+    barre.classList.toggle('solide',y>20);
+    prog.style.setProperty('--p',h>0?y/h:0);
+    var r=frise.getBoundingClientRect(), f=(innerHeight*.6-r.top)/r.height;
+    frise.style.setProperty('--f',Math.max(0,Math.min(1,f)));
+    var act=-1; secs.forEach(function(s,i){ if(s && s.getBoundingClientRect().top<innerHeight*.4) act=i });
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===act)});
+  }
+  addEventListener('scroll',defil,{passive:true}); defil();
+
+  /* carte de signaux */
+  var cv=document.getElementById('signaux'), ctx=cv.getContext('2d'), nb=document.getElementById('nb-signaux');
+  var W,H,dpr,pts=[],ondes=[],total=0,dernier=0;
+  function taille(){
+    dpr=Math.min(devicePixelRatio||1,2); var r=cv.getBoundingClientRect();
+    W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts=[]; var pas=W/16;
+    for(var y=pas*.8;y<H-pas*1.6;y+=pas) for(var x=pas*.8;x<W-pas*.5;x+=pas){
+      var dx=(x-W*.5)/(W*.46), dy=(y-H*.42)/(H*.42);
+      if(dx*dx+dy*dy*1.1<1+Math.sin(x*.05)*.08) pts.push({x:x+(Math.random()-.5)*pas*.3,y:y+(Math.random()-.5)*pas*.3,a:0});
+    }
+  }
+  function signal(){
+    var p=pts[Math.floor(Math.random()*pts.length)]; if(!p) return;
+    var alerte=Math.random()<.22;
+    ondes.push({x:p.x,y:p.y,t:0,c:alerte?'224,162,27':'39,66,201',max:alerte?52:30});
+    p.a=1; p.c=alerte?'224,162,27':'39,66,201';
+    total++; nb.textContent=total;
+  }
+  function dessine(t){
+    ctx.clearRect(0,0,W,H);
+    /* liens entre signaux récents */
+    var actifs=pts.filter(function(p){return p.a>.25});
+    ctx.lineWidth=1;
+    for(var i=0;i<actifs.length;i++)for(var j=i+1;j<actifs.length;j++){
+      var a=actifs[i],b=actifs[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<W*.22){ctx.strokeStyle='rgba(39,66,201,'+(Math.min(a.a,b.a)*.25*(1-d/(W*.22)))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+    }
+    pts.forEach(function(p){
+      var r=2+p.a*3.5;
+      ctx.fillStyle=p.a>.02?'rgba('+p.c+','+(.25+p.a*.75)+')':'rgba(20,37,43,.16)';
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,7);ctx.fill();
+      p.a*=.985;
+    });
+    ondes=ondes.filter(function(o){
+      o.t+=.012; var r=o.max*o.t;
+      ctx.strokeStyle='rgba('+o.c+','+(1-o.t)*.6+')'; ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(o.x,o.y,r,0,7);ctx.stroke();
+      return o.t<1;
+    });
+    if(t-dernier>420){signal();dernier=t}
+    requestAnimationFrame(dessine);
+  }
+  taille(); addEventListener('resize',taille);
+  if(calme){ for(var i=0;i<14;i++)signal(); pts.forEach(function(p){p.a=p.a||0}); ondes=[];
+    ctx.clearRect(0,0,W,H); pts.forEach(function(p){ctx.fillStyle=p.a?'rgba('+p.c+',.9)':'rgba(20,37,43,.16)';ctx.beginPath();ctx.arc(p.x,p.y,p.a?5:2,0,7);ctx.fill()});
+  } else { for(var k=0;k<6;k++)signal(); requestAnimationFrame(dessine); }
+})();
+</script>
+</body>
+</html>
