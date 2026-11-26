@@ -3,133 +3,186 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LEARNEO — Portfolio motion design de Johnlex DOHOUNON</title>
-<meta name="description" content="LEARNEO, studio de motion design et d'IA au Bénin : publicités animées, vidéos explicatives, contenus de sensibilisation en santé publique. Découvrez nos réalisations.">
-<meta property="og:title" content="LEARNEO — Portfolio motion design">
-<meta property="og:description" content="Publicités animées, vidéos explicatives et contenus de sensibilisation, conçus au Bénin par Johnlex DOHOUNON.">
-<meta property="og:image" content="learneo-johnlex.jpg">
+<title>LEARNEO — Motion design, Cotonou</title>
+<meta name="description" content="LEARNEO, studio de motion design de Johnlex Dohounon à Cotonou : publicités animées, vidéos explicatives et campagnes de santé.">
+<meta property="og:title" content="LEARNEO — Motion design, Cotonou">
+<meta property="og:description" content="Publicités animées, vidéos explicatives et campagnes de santé. 18 projets à voir.">
+<meta property="og:image" content="https://a24-5.github.io/ranlan-jose.jpg">
+<meta name="theme-color" content="#0E0E0C">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="is-loading">
 
-<!-- Intro : animation du logo LEARNEO -->
-<div id="intro" aria-hidden="true">
-  <video id="introVideo" muted playsinline preload="auto">
-    <source src="learneo-logo.mp4" type="video/mp4">
-  </video>
-  <p class="intro-tag">Studio de motion design &amp; IA</p>
-  <button id="skipIntro" type="button">Passer l'intro →</button>
+<!-- Écran d'ouverture : animation du logo -->
+<div class="loader" id="loader" aria-hidden="true">
+  <video id="loaderVideo" src="learneo-logo.mp4" muted playsinline preload="auto"></video>
+  <div class="loader-foot">
+    <span>LEARNEO — Studio de motion design</span>
+    <span id="loaderPct">000</span>
+  </div>
 </div>
 
-<header class="nav">
-  <a href="#top" class="brand" aria-label="LEARNEO, accueil"><img src="logo.png" alt="LEARNEO"></a>
-  <nav>
-    <a href="#realisations">Réalisations</a>
-    <a href="#services">Services</a>
-    <a href="#methode">Méthode</a>
-    <a href="#contact" class="btn btn-small">Me contacter</a>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel">Lire</span></div>
+
+<header class="top" id="top">
+  <a class="mark" href="#" aria-label="LEARNEO, retour en haut"><img src="logo-white.png" alt="LEARNEO"></a>
+  <nav class="menu">
+    <a href="#work"><i>01</i>Projets</a>
+    <a href="#about"><i>02</i>Studio</a>
+    <a href="#services"><i>03</i>Services</a>
+    <a href="#contact"><i>04</i>Contact</a>
   </nav>
+  <p class="status"><span class="dot"></span>Disponible pour de nouveaux projets</p>
 </header>
 
-<main id="top">
+<main>
 
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Portfolio · Motion design · Bénin</p>
-      <h1>Des vidéos animées qui <em>font comprendre</em>, et qui <em class="gold">font vendre</em>.</h1>
-      <p class="lead">Je suis <strong>Johnlex DOHOUNON</strong>, fondateur de LEARNEO. Je conçois des publicités, des vidéos explicatives et des campagnes de sensibilisation en motion design, en m'appuyant sur l'intelligence artificielle pour produire vite, sans sacrifier la qualité.</p>
-      <div class="hero-cta">
-        <a href="#realisations" class="btn">Voir les réalisations</a>
-        <a href="#contact" class="btn btn-ghost">Demander un devis</a>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <video class="hero-reel" src="showreel.mp4" poster="showreel.jpg" autoplay muted loop playsinline></video>
+    <div class="hero-shade"></div>
+    <p class="hero-tag mono">(Showreel 2026)</p>
+    <div class="hero-bottom">
+      <p class="hero-intro">Motion design pour les marques<br>qui veulent être comprises en 3 secondes.</p>
+      <h1 class="wordmark" aria-label="LEARNEO">
+        <span>L</span><span>E</span><span>A</span><span>R</span><span>N</span><span>E</span><span>O</span>
+      </h1>
+      <div class="hero-meta mono">
+        <span>Publicités · Explicatifs · Santé</span>
+        <span>Cotonou, Bénin — <b class="clock">--:--</b></span>
+        <a href="#work">Voir les projets ↓</a>
       </div>
     </div>
-    <button class="hero-reel" type="button" data-play="learneo-johnlex" aria-label="Lire la vidéo de présentation">
-      <img src="learneo-johnlex.jpg" alt="Vidéo de présentation LEARNEO">
-      <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="reel-label">Présentation LEARNEO · 2 min</span>
-    </button>
   </section>
 
-  <section class="stats" aria-label="Chiffres clés">
-    <div><strong id="statCount">17</strong><span>réalisations en ligne</span></div>
-    <div><strong>8</strong><span>marques et projets accompagnés</span></div>
-    <div><strong>9:16 · 16:9</strong><span>formats réseaux sociaux et écran large</span></div>
-    <div><strong>1080p</strong><span>livraison légère, prête pour WhatsApp</span></div>
+  <!-- Bandeau clients -->
+  <div class="marquee" aria-label="Clients">
+    <div class="marquee-track">
+      <span>Ranlan de José</span><span>Ets DOPAM</span><span>TCHIGAN Bouillie</span><span>Treats by aritiOluwa</span><span>MEDIMAP</span><span>StoryMind</span><span>Formation Import Chine</span>
+      <span>Ranlan de José</span><span>Ets DOPAM</span><span>TCHIGAN Bouillie</span><span>Treats by aritiOluwa</span><span>MEDIMAP</span><span>StoryMind</span><span>Formation Import Chine</span>
+    </div>
+  </div>
+
+  <!-- Manifeste -->
+  <section class="statement">
+    <p class="mono label">(Ce que je fais)</p>
+    <p class="statement-text" id="statement">
+      Je fabrique des publicités <span class="pill"><video src="ranlan-jose-preview.mp4" muted loop autoplay playsinline></video></span> qui donnent faim,
+      des vidéos explicatives <span class="pill wide"><video src="medimap-preview.mp4" muted loop autoplay playsinline></video></span> qui rendent simple ce qui ne l'est pas,
+      et des campagnes de santé <span class="pill wide"><video src="ia-sante-publique-preview.mp4" muted loop autoplay playsinline></video></span> que les gens regardent jusqu'au bout.
+    </p>
   </section>
 
-  <section id="realisations" class="work">
-    <div class="section-head">
-      <p class="eyebrow">Réalisations</p>
-      <h2>Ce que j'ai déjà animé</h2>
-      <p>Cliquez sur une vidéo pour la regarder. Les filtres vous aident à trouver des exemples proches de votre projet.</p>
+  <!-- Projets -->
+  <section class="work" id="work">
+    <div class="work-head">
+      <h2 class="h-xl">Projets<sup id="count">18</sup></h2>
+      <div class="work-tools">
+        <div class="filters mono" id="filters" role="tablist" aria-label="Filtrer les projets"></div>
+        <div class="views mono" role="group" aria-label="Affichage">
+          <button type="button" data-view="grid" aria-pressed="true">Grille</button>
+          <button type="button" data-view="list" aria-pressed="false">Liste</button>
+        </div>
+      </div>
     </div>
-    <div class="filters" role="tablist" id="filters"></div>
-    <div class="grid" id="grid"></div>
+    <div class="masonry" id="grid"></div>
+    <ol class="list" id="list" hidden></ol>
+    <div class="float-preview" id="floatPreview" aria-hidden="true"><video muted loop playsinline></video></div>
   </section>
 
-  <section id="services" class="services">
-    <div class="section-head">
-      <p class="eyebrow">Services</p>
-      <h2>Ce que LEARNEO peut faire pour vous</h2>
+  <!-- Studio -->
+  <section class="about" id="about">
+    <div class="about-photo reveal">
+      <img src="portrait.jpg" alt="Portrait de Johnlex Dohounon">
+      <p class="mono">Johnlex Dohounon — fondateur</p>
     </div>
-    <div class="cards">
-      <article><span class="ico">📣</span><h3>Publicités animées</h3><p>Spots de 15 à 60 secondes pour présenter un produit, une boutique ou une formation, pensés pour WhatsApp, Facebook, Instagram et TikTok.</p></article>
-      <article><span class="ico">💡</span><h3>Vidéos explicatives</h3><p>Un service, une application ou une démarche expliqués simplement, avec des personnages et des illustrations sur mesure.</p></article>
-      <article><span class="ico">🩺</span><h3>Sensibilisation en santé</h3><p>Messages de prévention et de santé publique, conçus avec une formation en surveillance épidémiologique pour rester justes et clairs.</p></article>
-      <article><span class="ico">✨</span><h3>Animation de logo</h3><p>Votre identité qui prend vie : intro de vidéos, signature de fin, version fond transparent.</p></article>
-      <article><span class="ico">📱</span><h3>Contenus réseaux sociaux</h3><p>Séries de vidéos courtes et éducatives pour faire grandir votre audience semaine après semaine.</p></article>
-      <article><span class="ico">📖</span><h3>Bandes-annonces</h3><p>Teasers de livres, d'événements ou de lancements, avec narration et ambiance sonore.</p></article>
+    <div class="about-text">
+      <p class="mono label reveal">(Le studio)</p>
+      <h2 class="h-lg reveal">Un studio d'une personne : celle qui vous répond est celle qui anime.</h2>
+      <p class="reveal">Je suis Johnlex Dohounon. Diplômé en santé publique, spécialité surveillance épidémiologique, je suis venu au motion design pour une raison simple : un message bien animé passe là où un long texte échoue.</p>
+      <p class="reveal">Aujourd'hui je travaille pour des commerçants, des formateurs, des porteurs d'applications et des acteurs de la santé, au Bénin et au-delà. Chaque vidéo part de votre client : ce qu'il doit comprendre, retenir, puis faire.</p>
+      <dl class="figures reveal">
+        <div><dt class="num" data-to="18">0</dt><dd>projets livrés</dd></div>
+        <div><dt class="num" data-to="8">0</dt><dd>marques accompagnées</dd></div>
+        <div><dt class="num" data-to="3">0</dt><dd>formats d’écran : vertical, large, carré</dd></div>
+      </dl>
+      <ul class="formats mono reveal">
+        <li>9:16</li><li>16:9</li><li>1:1</li><li>MP4</li><li>GIF</li><li>Lottie</li><li>SVG animé</li><li>Full HD</li>
+      </ul>
     </div>
   </section>
 
-  <section id="methode" class="process">
-    <div class="section-head">
-      <p class="eyebrow">Méthode</p>
-      <h2>De l'idée à la vidéo, en 4 étapes</h2>
-    </div>
+  <!-- Services -->
+  <section class="services" id="services">
+    <p class="mono label">(Services)</p>
+    <ul class="svc">
+      <li class="reveal"><span class="mono">01</span><h3>Publicités animées</h3><p>15 à 60 secondes pour vendre un produit, une boutique ou une formation, au format des statuts WhatsApp, Reels et TikTok.</p></li>
+      <li class="reveal"><span class="mono">02</span><h3>Vidéos explicatives</h3><p>Une application, un service ou une démarche racontés avec des personnages et des illustrations sur mesure.</p></li>
+      <li class="reveal"><span class="mono">03</span><h3>Campagnes de santé</h3><p>Prévention et sensibilisation, écrites avec une vraie formation en santé publique pour rester justes et compréhensibles.</p></li>
+      <li class="reveal"><span class="mono">04</span><h3>Animation de logo</h3><p>Votre identité qui prend vie : ouverture de vidéos, signature de fin, version sur fond transparent.</p></li>
+      <li class="reveal"><span class="mono">05</span><h3>Séries pour les réseaux</h3><p>Des formats courts et éducatifs, publiés semaine après semaine, pour construire une audience.</p></li>
+      <li class="reveal"><span class="mono">06</span><h3>Bandes-annonces</h3><p>Livres, événements, lancements : narration, ambiance sonore et typographie qui marque.</p></li>
+    </ul>
+  </section>
+
+  <!-- Méthode -->
+  <section class="process">
+    <p class="mono label">(Comment on travaille)</p>
     <ol class="steps">
-      <li><span>01</span><h3>Brief</h3><p>On échange sur votre objectif, votre cible et votre message.</p></li>
-      <li><span>02</span><h3>Script &amp; storyboard</h3><p>Je vous propose le texte et le découpage visuel, à valider avant l'animation.</p></li>
-      <li><span>03</span><h3>Animation</h3><p>Création des visuels, de l'animation, de la musique et de la voix.</p></li>
-      <li><span>04</span><h3>Livraison</h3><p>Vidéo en 1080p légère, aux formats de vos réseaux, avec des retouches incluses.</p></li>
+      <li class="reveal"><b>Brief</b><p>Un appel ou quelques messages WhatsApp : votre objectif, votre cible, votre budget.</p></li>
+      <li class="reveal"><b>Script &amp; storyboard</b><p>Le texte et le découpage image par image, validés avant toute animation.</p></li>
+      <li class="reveal"><b>Animation</b><p>Visuels, mouvements, musique et voix. Vous suivez l'avancement.</p></li>
+      <li class="reveal"><b>Livraison</b><p>Fichiers légers en Full HD, aux formats de vos réseaux, retouches incluses.</p></li>
     </ol>
   </section>
 
-  <section id="contact" class="contact">
-    <div>
-      <p class="eyebrow">Contact</p>
-      <h2>Vous avez un projet&nbsp;? Parlons-en.</h2>
-      <p>Décrivez votre activité et votre besoin : je vous réponds avec une proposition et un devis.</p>
-    </div>
-    <div class="contact-actions">
-      <a class="btn btn-wa" href="https://wa.me/2290157138864?text=Bonjour%20Johnlex%2C%20j%27ai%20vu%20votre%20portfolio%20LEARNEO%20et%20j%27aimerais%20une%20vid%C3%A9o%20pour%20mon%20activit%C3%A9." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-      <a class="btn btn-ghost" href="mailto:johnlexdohounon24@gmail.com?subject=Projet%20vid%C3%A9o%20motion%20design">johnlexdohounon24@gmail.com</a>
-      <p class="phone">+229 01 57 13 88 64 · Sèmè-Podji, Bénin</p>
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <p class="mono label">(Contact)</p>
+    <h2 class="contact-title">Un projet en tête&nbsp;?<br><a href="https://wa.me/2290157138864?text=Bonjour%20Johnlex%2C%20j%27ai%20vu%20le%20portfolio%20LEARNEO%20et%20j%27ai%20un%20projet%20de%20vid%C3%A9o." target="_blank" rel="noopener" class="big-link">Parlons-en <span>→</span></a></h2>
+    <div class="contact-grid mono">
+      <div><span>WhatsApp</span><a href="https://wa.me/2290157138864" target="_blank" rel="noopener">+229 01 57 13 88 64</a></div>
+      <div><span>E-mail</span><a href="mailto:johnlexdohounon24@gmail.com?subject=Projet%20vid%C3%A9o">johnlexdohounon24@gmail.com</a></div>
+      <div><span>Studio</span><p>Sèmè-Podji, Bénin</p></div>
+      <div><span>Heure locale</span><p class="clock">--:--</p></div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <img src="logo.png" alt="LEARNEO">
-  <p>© <span id="year">2026</span> LEARNEO · Johnlex DOHOUNON · Motion design &amp; IA</p>
+<footer class="foot mono">
+  <span>© <span id="year">2026</span> LEARNEO</span>
+  <span>Conçu et développé par LEARNEO</span>
+  <a href="#" id="toTop">Haut de page ↑</a>
 </footer>
 
-<!-- Lecteur vidéo -->
-<div id="player" role="dialog" aria-modal="true" aria-label="Lecteur vidéo" hidden>
-  <div class="player-box">
-    <button id="closePlayer" type="button" aria-label="Fermer">✕</button>
-    <div class="player-media"><video id="playerVideo" controls playsinline preload="metadata"></video></div>
-    <div class="player-info">
-      <p class="eyebrow" id="pClient"></p>
+<!-- Lecteur -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Lecteur vidéo" hidden>
+  <div class="player-bar mono">
+    <span id="pIndex">01 / 18</span>
+    <div>
+      <button type="button" id="pPrev" aria-label="Projet précédent">← Préc.</button>
+      <button type="button" id="pNext" aria-label="Projet suivant">Suiv. →</button>
+      <button type="button" id="pClose" aria-label="Fermer">Fermer ✕</button>
+    </div>
+  </div>
+  <div class="player-body">
+    <div class="player-media"><video id="pVideo" controls playsinline></video></div>
+    <aside class="player-info">
+      <p class="mono" id="pClient"></p>
       <h3 id="pTitle"></h3>
       <p id="pDesc"></p>
-      <p class="meta" id="pMeta"></p>
-    </div>
+      <dl class="mono">
+        <div><dt>Format</dt><dd id="pFormat"></dd></div>
+        <div><dt>Durée</dt><dd id="pDur"></dd></div>
+        <div><dt>Année</dt><dd id="pYear"></dd></div>
+      </dl>
+      <a class="mono player-cta" href="#contact" id="pCta">Je veux une vidéo comme ça →</a>
+    </aside>
   </div>
 </div>
 
