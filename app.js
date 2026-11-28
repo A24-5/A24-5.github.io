@@ -20,28 +20,10 @@
   }
   tick(); setInterval(tick, 30000);
 
-  /* ---------- Écran d'ouverture ---------- */
-  var loader = $('#loader'), lv = $('#loaderVideo'), pct = $('#loaderPct'), opened = false;
-  function open() {
-    if (opened) return; opened = true;
-    try { sessionStorage.setItem('lrn', '1'); } catch (e) {}
-    pct.textContent = '100';
-    loader.classList.add('out');
-    document.body.classList.remove('is-loading');
-    setTimeout(function () { document.body.classList.add('ready'); }, 250);
-    setTimeout(function () { loader.classList.add('gone'); try { lv.pause(); } catch (e) {} }, 1100);
-  }
-  var seen = false; try { seen = sessionStorage.getItem('lrn') === '1'; } catch (e) {}
-  if (seen || reduced) { loader.classList.add('gone'); document.body.classList.remove('is-loading'); document.body.classList.add('ready'); opened = true; }
-  else {
-    lv.addEventListener('timeupdate', function () {
-      if (lv.duration) pct.textContent = ('00' + Math.min(100, Math.round(lv.currentTime / lv.duration * 100))).slice(-3);
-    });
-    lv.addEventListener('ended', function () { setTimeout(open, 350); });
-    var pr = lv.play(); if (pr && pr.catch) pr.catch(function () { setTimeout(open, 900); });
-    setTimeout(open, 8000);
-    loader.addEventListener('click', open);
-  }
+  /* ---------- Entrée : l'animation du logo (hero) sert d'introduction ---------- */
+  requestAnimationFrame(function () { document.body.classList.add('ready'); });
+  var hl = $('.hero-logo');
+  if (hl) { var pr = hl.play && hl.play(); if (pr && pr.catch) pr.catch(function () {}); }
 
   /* ---------- Curseur ---------- */
   var cur = $('#cursor'), curLabel = $('#cursorLabel');
